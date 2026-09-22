@@ -1,946 +1,297 @@
-/* ========================================
-   RESET
-======================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    background: #f6f8fb;
-    color: #172033;
-    line-height: 1.6;
-}
+    <title>Kinh tế học bằng Tiếng Anh</title>
 
+    <meta
+        name="description"
+        content="Tổng hợp tài liệu học Kinh tế học bằng Tiếng Anh."
+    >
 
-/* ========================================
-   GLOBAL
-======================================== */
+    <link rel="stylesheet" href="style.css">
+</head>
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+<body>
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
+    <!-- =========================
+         HERO
+    ========================== -->
 
-::selection {
-    background: #dbeafe;
-    color: #172033;
-}
+    <header class="hero">
 
+        <div class="hero-content">
 
-/* ========================================
-   HERO
-======================================== */
+            <p class="hero-label">
+                ENGLISH FOR ECONOMICS
+            </p>
 
-.hero {
-    position: relative;
+            <h1>
+                Kinh tế học bằng Tiếng Anh
+            </h1>
 
-    min-height: 520px;
+            <p class="hero-description">
+                Tổng hợp tài liệu học Kinh tế học bằng Tiếng Anh,
+                giúp bạn làm quen với thuật ngữ và nội dung kinh tế
+                trong môi trường học tập quốc tế.
+            </p>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            <a href="#guide" class="primary-btn">
+                Bắt đầu học
+            </a>
 
-    padding: 80px 20px;
+        </div>
 
-    overflow: hidden;
+    </header>
 
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(59, 130, 246, 0.16),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 70%,
-            rgba(99, 102, 241, 0.12),
-            transparent 32%
-        ),
-        linear-gradient(
-            135deg,
-            #0f172a 0%,
-            #172554 50%,
-            #1e3a8a 100%
-        );
-}
 
-.hero::before {
-    content: "";
+    <!-- =========================
+         LỜI NHẮN
+    ========================== -->
 
-    position: absolute;
+    <section class="message-section">
 
-    width: 420px;
-    height: 420px;
+        <div class="message-card">
 
-    border-radius: 50%;
+            <h2>
+                Xin chào mấy em, chị là Huỳnh Như!
+            </h2>
 
-    background: rgba(255, 255, 255, 0.035);
+            <p>
+                Chị tạo website này để tổng hợp và chia sẻ tài liệu
+                học tiếng Anh cho các môn học.
+            </p>
 
-    top: -180px;
-    right: -100px;
-}
+            <p>
+                Trước khi truy cập tài liệu, chị nhờ mấy em mở liên kết
+                Shopee một lần. Việc này giúp chị nhận được một phần
+                <strong>hoa hồng Affiliate</strong>, qua đó có thêm
+                kinh phí để duy trì website và cập nhật thêm tài liệu mới.
+            </p>
 
-.hero::after {
-    content: "";
+            <p>
+                Hiện tại website có
+                <strong>Kinh tế học vi mô</strong>
+                và
+                <strong>Kinh tế học vĩ mô</strong>
+                bằng tiếng Anh.
+                Những môn khác có thể sẽ được chị cập nhật thêm
+                trong tương lai.
+            </p>
 
-    position: absolute;
+            <p class="message-thanks">
+                <strong>
+                    Cảm ơn mấy em đã ủng hộ chị nhé!
+                </strong>
+            </p>
 
-    width: 300px;
-    height: 300px;
+        </div>
 
-    border-radius: 50%;
+    </section>
 
-    background: rgba(255, 255, 255, 0.03);
 
-    bottom: -160px;
-    left: -80px;
-}
+    <!-- =========================
+         HƯỚNG DẪN
+    ========================== -->
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+    <main id="guide" class="guide-section">
 
-    width: min(900px, 100%);
+        <div class="section-header">
 
-    text-align: center;
+            <p class="section-label">
+                HƯỚNG DẪN TRUY CẬP
+            </p>
 
-    color: white;
-}
+            <h2>
+                Thực hiện theo 2 bước
+            </h2>
 
-.hero-label {
-    display: inline-block;
+            <p>
+                Hoàn thành bước 1 để mở khóa tài liệu học.
+            </p>
 
-    margin-bottom: 18px;
+        </div>
 
-    padding: 7px 14px;
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
+        <!-- =========================
+             BƯỚC 1
+        ========================== -->
 
-    border-radius: 999px;
+        <section class="step-card">
 
-    background: rgba(255, 255, 255, 0.08);
+            <div class="step-number">
+                01
+            </div>
 
-    color: #bfdbfe;
+            <div class="step-content">
 
-    font-size: 12px;
-    font-weight: 700;
+                <div class="step-heading">
 
-    letter-spacing: 2px;
-}
+                    <h3>
+                        Mở liên kết Shopee
+                    </h3>
 
-.hero h1 {
-    margin-bottom: 20px;
+                    <span id="step1Status" class="status">
+                        Chưa hoàn thành bước 1
+                    </span>
 
-    font-size: clamp(38px, 7vw, 68px);
+                </div>
 
-    line-height: 1.08;
+                <p>
+                    Nhấn vào nút bên dưới để mở liên kết Shopee.
+                    Sau khi thực hiện bước này, bạn có thể truy cập
+                    các khóa học.
+                </p>
 
-    letter-spacing: -2px;
+                <a
+                    id="shopeeBtn"
+                    class="shopee-btn"
+                    href="https://s.shopee.vn/8V97ofGLqA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Mở liên kết Shopee
+                </a>
 
-    font-weight: 800;
-}
+            </div>
 
-.hero-description {
-    max-width: 680px;
+        </section>
 
-    margin: 0 auto 32px;
 
-    color: #dbeafe;
+        <!-- =========================
+             BƯỚC 2
+        ========================== -->
 
-    font-size: 17px;
+        <section class="step-card">
 
-    line-height: 1.8;
-}
+            <div class="step-number">
+                02
+            </div>
 
+            <div class="step-content">
 
-/* ========================================
-   PRIMARY BUTTON
-======================================== */
+                <div class="step-heading">
 
-.primary-btn {
-    display: inline-flex;
+                    <h3>
+                        Chọn khóa học
+                    </h3>
 
-    align-items: center;
-    justify-content: center;
+                    <span
+                        id="step2Status"
+                        class="status muted"
+                    >
+                        Khóa học đang bị khóa
+                    </span>
 
-    min-height: 52px;
+                </div>
 
-    padding: 0 28px;
+                <p>
+                    Sau khi hoàn thành bước 1, bạn có thể chọn
+                    một trong hai khóa học dưới đây.
+                </p>
 
-    border-radius: 14px;
 
-    background: white;
+                <!-- KHÓA HỌC VI MÔ -->
 
-    color: #172554;
+                <a
+                    id="microBtn"
+                    class="course-btn locked"
+                    href="#"
+                    aria-disabled="true"
+                >
 
-    font-size: 15px;
-    font-weight: 700;
+                    <div class="course-info">
 
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.2);
+                        <span class="course-label">
+                            MICROECONOMICS
+                        </span>
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
+                        <strong>
+                            Kinh tế học vi mô Tiếng Anh
+                        </strong>
 
-.primary-btn:hover {
-    transform: translateY(-3px);
+                    </div>
 
-    box-shadow:
-        0 16px 35px rgba(0, 0, 0, 0.28);
-}
+                    <span class="course-arrow">
+                        →
+                    </span>
 
-.primary-btn:active {
-    transform: translateY(0);
-}
+                </a>
 
 
-/* ========================================
-   MESSAGE SECTION
-======================================== */
+                <!-- KHÓA HỌC VĨ MÔ -->
 
-.message-section {
-    width: min(900px, calc(100% - 32px));
+                <a
+                    id="macroBtn"
+                    class="course-btn locked"
+                    href="#"
+                    aria-disabled="true"
+                >
 
-    margin: 50px auto 30px;
-}
+                    <div class="course-info">
 
-.message-card {
-    position: relative;
+                        <span class="course-label">
+                            MACROECONOMICS
+                        </span>
 
-    padding: 34px 38px;
+                        <strong>
+                            Kinh tế học vĩ mô Tiếng Anh
+                        </strong>
 
-    border: 1px solid #e5eaf1;
+                    </div>
 
-    border-radius: 24px;
+                    <span class="course-arrow">
+                        →
+                    </span>
 
-    background: white;
+                </a>
 
-    box-shadow:
-        0 10px 35px rgba(15, 23, 42, 0.06);
+            </div>
 
-    overflow: hidden;
-}
+        </section>
 
-.message-card::before {
-    content: "";
 
-    position: absolute;
+        <!-- =========================
+             TIẾN ĐỘ
+        ========================== -->
 
-    top: 0;
-    left: 0;
+        <div class="progress-box">
 
-    width: 5px;
-    height: 100%;
+            <span>
+                Tiến độ
+            </span>
 
-    background:
-        linear-gradient(
-            180deg,
-            #2563eb,
-            #4f46e5
-        );
-}
+            <strong id="progress">
+                0/2 bước
+            </strong>
 
-.message-card h2 {
-    margin-bottom: 20px;
+        </div>
 
-    color: #111827;
+    </main>
 
-    font-size: 25px;
 
-    line-height: 1.3;
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-    font-weight: 750;
-}
+    <footer class="footer">
 
-.message-card p {
-    margin: 13px 0;
+        <p>
+            © 2026 Huỳnh Như
+        </p>
 
-    color: #4b5563;
+        <p>
+            English for Economics
+        </p>
 
-    font-size: 15px;
+    </footer>
 
-    line-height: 1.8;
-}
 
-.message-card strong {
-    color: #1e3a8a;
+    <!-- JAVASCRIPT -->
 
-    font-weight: 700;
-}
+    <script src="script.js"></script>
 
-.message-thanks {
-    margin-top: 22px !important;
-    margin-bottom: 0 !important;
-
-    color: #172554 !important;
-}
-
-
-/* ========================================
-   GUIDE SECTION
-======================================== */
-
-.guide-section {
-    width: min(900px, calc(100% - 32px));
-
-    margin: 65px auto 80px;
-}
-
-.section-header {
-    margin-bottom: 30px;
-
-    text-align: center;
-}
-
-.section-label {
-    margin-bottom: 8px;
-
-    color: #2563eb;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.section-header h2 {
-    margin-bottom: 10px;
-
-    color: #111827;
-
-    font-size: clamp(28px, 5vw, 38px);
-
-    line-height: 1.2;
-
-    letter-spacing: -0.7px;
-}
-
-.section-header > p:last-child {
-    color: #64748b;
-
-    font-size: 15px;
-}
-
-
-/* ========================================
-   STEP CARD
-======================================== */
-
-.step-card {
-    display: flex;
-
-    gap: 24px;
-
-    margin-bottom: 20px;
-
-    padding: 30px;
-
-    border: 1px solid #e5eaf1;
-
-    border-radius: 22px;
-
-    background: white;
-
-    box-shadow:
-        0 8px 28px rgba(15, 23, 42, 0.045);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.step-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 35px rgba(15, 23, 42, 0.07);
-}
-
-
-/* ========================================
-   STEP NUMBER
-======================================== */
-
-.step-number {
-    flex: 0 0 58px;
-
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 16px;
-
-    background: #eff6ff;
-
-    color: #2563eb;
-
-    font-size: 15px;
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* ========================================
-   STEP CONTENT
-======================================== */
-
-.step-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.step-heading {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-bottom: 8px;
-}
-
-.step-heading h3 {
-    color: #111827;
-
-    font-size: 20px;
-
-    line-height: 1.3;
-}
-
-.step-content > p {
-    margin-bottom: 20px;
-
-    color: #64748b;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* ========================================
-   STATUS
-======================================== */
-
-.status {
-    display: inline-flex;
-
-    align-items: center;
-
-    padding: 6px 11px;
-
-    border-radius: 999px;
-
-    background: #f1f5f9;
-
-    color: #64748b;
-
-    font-size: 12px;
-    font-weight: 650;
-
-    white-space: nowrap;
-}
-
-.status.done {
-    background: #ecfdf5;
-
-    color: #047857;
-}
-
-.status.muted {
-    background: #f1f5f9;
-
-    color: #64748b;
-}
-
-
-/* ========================================
-   SHOPEE BUTTON
-======================================== */
-
-.shopee-btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 48px;
-
-    padding: 0 22px;
-
-    border-radius: 12px;
-
-    background: #111827;
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.shopee-btn:hover {
-    transform: translateY(-2px);
-
-    background: #1f2937;
-
-    box-shadow:
-        0 8px 20px rgba(15, 23, 42, 0.16);
-}
-
-.shopee-btn:active {
-    transform: translateY(0);
-}
-
-
-/* ========================================
-   COURSE BUTTON
-======================================== */
-
-.course-btn {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    width: 100%;
-
-    min-height: 82px;
-
-    margin-top: 13px;
-
-    padding: 17px 20px;
-
-    border: 1px solid #dbe3ef;
-
-    border-radius: 16px;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
-
-.course-info {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-    min-width: 0;
-}
-
-.course-label {
-    color: #64748b;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-}
-
-.course-info strong {
-    color: #172033;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    line-height: 1.4;
-}
-
-.course-arrow {
-    flex: 0 0 auto;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    background: #eff6ff;
-
-    color: #2563eb;
-
-    font-size: 20px;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-}
-
-
-/* ========================================
-   UNLOCKED COURSE
-======================================== */
-
-.course-btn:not(.locked):hover {
-    transform: translateY(-2px);
-
-    border-color: #93c5fd;
-
-    background: #f8fbff;
-
-    box-shadow:
-        0 10px 25px rgba(37, 99, 235, 0.08);
-}
-
-.course-btn:not(.locked):hover .course-arrow {
-    transform: translateX(3px);
-
-    background: #dbeafe;
-}
-
-
-/* ========================================
-   LOCKED COURSE
-======================================== */
-
-.course-btn.locked {
-    cursor: not-allowed;
-
-    background: #f8fafc;
-
-    border-color: #e5e7eb;
-
-    opacity: 0.68;
-}
-
-.course-btn.locked .course-info strong {
-    color: #64748b;
-}
-
-.course-btn.locked .course-arrow {
-    background: #e5e7eb;
-
-    color: #94a3b8;
-}
-
-
-/* ========================================
-   PROGRESS BOX
-======================================== */
-
-.progress-box {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-top: 25px;
-
-    padding: 17px 20px;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 14px;
-
-    background: #f8fafc;
-
-    color: #64748b;
-
-    font-size: 14px;
-}
-
-.progress-box strong {
-    color: #2563eb;
-
-    font-size: 14px;
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
-
-.footer {
-    padding: 35px 20px;
-
-    border-top: 1px solid #e5e7eb;
-
-    background: #ffffff;
-
-    text-align: center;
-
-    color: #94a3b8;
-
-    font-size: 12px;
-
-    line-height: 1.8;
-}
-
-.footer p:first-child {
-    color: #64748b;
-
-    font-weight: 600;
-}
-
-
-/* ========================================
-   RESPONSIVE - TABLET
-======================================== */
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: 480px;
-
-        padding: 70px 20px;
-    }
-
-    .hero h1 {
-        letter-spacing: -1.5px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .message-section {
-        margin-top: 35px;
-    }
-
-    .message-card {
-        padding: 28px 25px;
-    }
-
-    .guide-section {
-        margin-top: 50px;
-    }
-
-    .step-card {
-        padding: 25px;
-
-        gap: 18px;
-    }
-
-}
-
-
-/* ========================================
-   RESPONSIVE - MOBILE
-======================================== */
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 450px;
-
-        padding: 60px 18px;
-    }
-
-    .hero-label {
-        font-size: 10px;
-
-        letter-spacing: 1.5px;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-
-        letter-spacing: -1.3px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-
-        line-height: 1.7;
-    }
-
-    .primary-btn {
-        width: 100%;
-
-        max-width: 280px;
-    }
-
-
-    /* MESSAGE */
-
-    .message-section {
-        width: calc(100% - 24px);
-
-        margin-top: 28px;
-    }
-
-    .message-card {
-        padding: 25px 21px;
-
-        border-radius: 20px;
-    }
-
-    .message-card h2 {
-        font-size: 21px;
-    }
-
-    .message-card p {
-        font-size: 14px;
-
-        line-height: 1.75;
-    }
-
-
-    /* GUIDE */
-
-    .guide-section {
-        width: calc(100% - 24px);
-
-        margin-top: 45px;
-
-        margin-bottom: 60px;
-    }
-
-    .section-header {
-        margin-bottom: 23px;
-    }
-
-    .section-header h2 {
-        font-size: 29px;
-    }
-
-    .section-header > p:last-child {
-        font-size: 14px;
-    }
-
-
-    /* STEP */
-
-    .step-card {
-        flex-direction: column;
-
-        gap: 17px;
-
-        padding: 21px;
-
-        border-radius: 19px;
-    }
-
-    .step-number {
-        width: 48px;
-        height: 48px;
-
-        flex-basis: 48px;
-
-        border-radius: 13px;
-    }
-
-    .step-heading {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 9px;
-    }
-
-    .step-heading h3 {
-        font-size: 18px;
-    }
-
-    .step-content > p {
-        font-size: 13px;
-    }
-
-
-    /* SHOPEE */
-
-    .shopee-btn {
-        width: 100%;
-    }
-
-
-    /* COURSE */
-
-    .course-btn {
-        min-height: 76px;
-
-        padding: 15px;
-
-        gap: 12px;
-    }
-
-    .course-info strong {
-        font-size: 14px;
-    }
-
-    .course-arrow {
-        width: 34px;
-        height: 34px;
-
-        font-size: 18px;
-    }
-
-
-    /* PROGRESS */
-
-    .progress-box {
-        padding: 15px 17px;
-    }
-
-}
-
-
-/* ========================================
-   VERY SMALL MOBILE
-======================================== */
-
-@media (max-width: 380px) {
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero-description {
-        font-size: 13px;
-    }
-
-    .message-card h2 {
-        font-size: 20px;
-    }
-
-    .course-info strong {
-        font-size: 13px;
-    }
-
-}
+</body>
+</html>
