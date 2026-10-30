@@ -1,123 +1,194 @@
 
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    // Đường dẫn tài liệu
-    const MICRO =
-        "https://learn.mru.org/courses/principles-of-microeconomics";
+// ========================================
+// 1. LINK TÀI LIỆU
+// ========================================
 
-    const MACRO =
-        "https://learn.mru.org/courses/principles-of-macroeconomics";
+const MICRO =
+    "https://learn.mru.org/courses/principles-of-microeconomics";
 
-    const QUANTRI =
-        "https://docs.google.com/document/d/143zer9A0yGyKXV3N2ilX7UyrnUtIdPcYMDiPofEVys0/edit?tab=t.0";
+const MACRO =
+    "https://learn.mru.org/courses/principles-of-macroeconomics";
 
-    const KETOAN =
-        "https://docs.google.com/document/d/1X30JybYNzF7xjeOGHGDy_WR2xVajP_ABMdYv2jD7JIM/edit?tab=t.0";
+const QUANTRI =
+    "https://docs.google.com/document/d/143zer9A0yGyKXV3N2ilX7UyrnUtIdPcYMDiPofEVys0/edit?tab=t.0";
 
+const KETOAN =
+    "https://docs.google.com/document/d/1X30JybYNzF7xjeOGHGDy_WR2xVajP_ABMdYv2jD7JIM/edit?tab=t.0";
 
-    // Lấy các phần tử HTML
-    const shopeeBtn = document.getElementById("shopeeBtn");
+const MARKETING_EN =
+    "https://drive.google.com/drive/folders/1D4pvIdn85KiT2Z89T6MRTrU6EJS6lWG-";
 
-    const status1 = document.getElementById("step1Status");
-    const status2 = document.getElementById("step2Status");
-    const progress = document.getElementById("progress");
+const MARKETING_VI =
+    "https://docs.google.com/document/d/1K-MbauTEHy2rQHkVZQy9Zy5teUuwjkGSArsKkjjp1DM/edit?tab=t.x7g0hyt7bk8x";
 
+const TAICHINH_EN =
+    "https://docs.google.com/document/d/1g2iM0VSOQev9-5A388sk-8Ombcu4BERgQY-LGR24-Qo/edit?tab=t.0";
 
-    // Danh sách tài liệu
-    const courseButtons = [
-        {
-            button: document.getElementById("microBtn"),
-            url: MICRO
-        },
-        {
-            button: document.getElementById("macroBtn"),
-            url: MACRO
-        },
-        {
-            button: document.getElementById("quantriBtn"),
-            url: QUANTRI
-        },
-        {
-            button: document.getElementById("ketoanBtn"),
-            url: KETOAN
-        }
-    ];
+const TAICHINH_VI =
+    "https://drive.google.com/drive/folders/13HS6m-r_OZwdeF7-sVdWEBtwyu7HmwZd";
 
 
-    // Khóa tất cả tài liệu
-    function lockCourses() {
+// ========================================
+// 2. LẤY CÁC PHẦN TỬ HTML
+// ========================================
 
-        courseButtons.forEach(course => {
-            if (!course.button) return;
+const microBtn = document.getElementById("microBtn");
+const macroBtn = document.getElementById("macroBtn");
+const quantriBtn = document.getElementById("quantriBtn");
+const ketoanBtn = document.getElementById("ketoanBtn");
 
-            course.button.href = "#";
-            course.button.classList.add("locked");
-            course.button.setAttribute("aria-disabled", "true");
-            course.button.removeAttribute("target");
-        });
+const marketingEnBtn =
+    document.getElementById("marketingEnBtn");
 
-        status1.textContent = "Chưa hoàn thành bước 1";
-        status1.className = "status";
+const marketingViBtn =
+    document.getElementById("marketingViBtn");
 
-        status2.textContent = "Tài liệu đang bị khóa";
-        status2.className = "status muted";
+const taichinhEnBtn =
+    document.getElementById("taichinhEnBtn");
 
-        progress.textContent = "0/2 bước";
-    }
+const taichinhViBtn =
+    document.getElementById("taichinhViBtn");
 
+const shopeeBtn = document.getElementById("shopeeBtn");
 
-    // Mở khóa tài liệu
-    function unlockCourses() {
-
-        courseButtons.forEach(course => {
-            if (!course.button) return;
-
-            course.button.href = course.url;
-            course.button.classList.remove("locked");
-            course.button.setAttribute("aria-disabled", "false");
-            course.button.setAttribute("target", "_blank");
-            course.button.setAttribute("rel", "noopener noreferrer");
-        });
-
-        status1.textContent = "✓ Đã hoàn thành bước 1";
-        status1.className = "status done";
-
-        status2.textContent = "✓ Đã mở khóa 4 tài liệu";
-        status2.className = "status done";
-
-        progress.textContent = "2/2 bước";
-    }
+const status1 = document.getElementById("step1Status");
+const status2 = document.getElementById("step2Status");
+const progress = document.getElementById("progress");
 
 
-    // Bấm Shopee để mở khóa tài liệu
-    if (shopeeBtn) {
-        shopeeBtn.addEventListener("click", () => {
-            unlockCourses();
-        });
-    }
+// ========================================
+// 3. DANH SÁCH 8 TÀI LIỆU
+// ========================================
+
+const courseButtons = [
+    { button: microBtn, url: MICRO },
+    { button: macroBtn, url: MACRO },
+    { button: quantriBtn, url: QUANTRI },
+    { button: ketoanBtn, url: KETOAN },
+
+    { button: marketingEnBtn, url: MARKETING_EN },
+    { button: marketingViBtn, url: MARKETING_VI },
+
+    { button: taichinhEnBtn, url: TAICHINH_EN },
+    { button: taichinhViBtn, url: TAICHINH_VI }
+];
 
 
-    // Chặn truy cập khi tài liệu đang bị khóa
-    courseButtons.forEach(course => {
+// ========================================
+// 4. KHÓA TOÀN BỘ TÀI LIỆU
+// ========================================
 
-        if (!course.button) return;
+function lockCourses() {
 
-        course.button.addEventListener("click", event => {
+    courseButtons.forEach(({ button }) => {
 
-            if (course.button.classList.contains("locked")) {
-                event.preventDefault();
+        button.href = "#";
 
-                alert(
-                    "Vui lòng mở liên kết Shopee ở Bước 1 trước."
-                );
-            }
+        button.classList.add("locked");
 
-        });
+        button.setAttribute("aria-disabled", "true");
+
+        button.removeAttribute("target");
 
     });
 
+    status1.textContent = "Chưa hoàn thành bước 1";
+    status1.className = "status";
 
-    // Khởi tạo trạng thái khi tải trang
-    lockCourses();
+    status2.textContent = "Tài liệu đang bị khóa";
+    status2.className = "status muted";
+
+    progress.textContent = "0/2 bước";
+}
+
+
+// ========================================
+// 5. MỞ KHÓA TOÀN BỘ TÀI LIỆU
+// ========================================
+
+function unlockCourses() {
+
+    courseButtons.forEach(({ button, url }) => {
+
+        button.href = url;
+
+        button.classList.remove("locked");
+
+        button.setAttribute("aria-disabled", "false");
+
+        button.setAttribute("target", "_blank");
+
+        button.setAttribute("rel", "noopener noreferrer");
+
+    });
+
+    status1.textContent = "✓ Đã hoàn thành bước 1";
+    status1.className = "status done";
+
+    status2.textContent = "✓ Đã mở khóa 8 tài liệu";
+    status2.className = "status done";
+
+    progress.textContent = "2/2 bước";
+}
+
+
+// ========================================
+// 6. SỰ KIỆN MỞ SHOPEE
+// ========================================
+
+shopeeBtn.addEventListener("click", function () {
+
+    unlockCourses();
 
 });
+
+
+// ========================================
+// 7. NGĂN TRUY CẬP KHI CHƯA MỞ KHÓA
+// ========================================
+
+courseButtons.forEach(({ button }) => {
+
+    button.addEventListener("click", function (event) {
+
+        if (button.classList.contains("locked")) {
+
+            event.preventDefault();
+
+            alert(
+                "Vui lòng mở liên kết Shopee ở Bước 1 trước khi truy cập tài liệu."
+            );
+
+        }
+
+    });
+
+    // Hỗ trợ thao tác bằng bàn phím
+
+    button.addEventListener("keydown", function (event) {
+
+        if (
+            button.classList.contains("locked") &&
+            (event.key === "Enter" || event.key === " ")
+        ) {
+
+            event.preventDefault();
+
+            alert(
+                "Vui lòng mở liên kết Shopee ở Bước 1 trước khi truy cập tài liệu."
+            );
+
+        }
+
+    });
+
+});
+
+
+// ========================================
+// 8. KHỞI TẠO TRẠNG THÁI BAN ĐẦU
+// ========================================
+
+lockCourses();
