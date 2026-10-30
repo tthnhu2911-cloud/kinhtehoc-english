@@ -5,27 +5,39 @@
 // 1. LINK TÀI LIỆU
 // ========================================
 
+// LIST ĐỒ ĐI QUÂN SỰ
+const QUANSU =
+    "https://docs.google.com/spreadsheets/d/10aOEOAeB5oTOF6XHuRdF-ykHII4BXWcgyfNTCIyqt-M/htmlview";
+
+// KINH TẾ HỌC VI MÔ
 const MICRO =
     "https://learn.mru.org/courses/principles-of-microeconomics";
 
+// KINH TẾ HỌC VĨ MÔ
 const MACRO =
     "https://learn.mru.org/courses/principles-of-macroeconomics";
 
+// QUẢN TRỊ HỌC
 const QUANTRI =
     "https://docs.google.com/document/d/143zer9A0yGyKXV3N2ilX7UyrnUtIdPcYMDiPofEVys0/edit?tab=t.0";
 
+// NGUYÊN LÝ KẾ TOÁN
 const KETOAN =
     "https://docs.google.com/document/d/1X30JybYNzF7xjeOGHGDy_WR2xVajP_ABMdYv2jD7JIM/edit?tab=t.0";
 
+// NGUYÊN LÝ MARKETING - TIẾNG ANH
 const MARKETING_EN =
     "https://drive.google.com/drive/folders/1D4pvIdn85KiT2Z89T6MRTrU6EJS6lWG-";
 
+// NGUYÊN LÝ MARKETING - TIẾNG VIỆT
 const MARKETING_VI =
     "https://docs.google.com/document/d/1K-MbauTEHy2rQHkVZQy9Zy5teUuwjkGSArsKkjjp1DM/edit?tab=t.x7g0hyt7bk8x";
 
+// TÀI CHÍNH DOANH NGHIỆP - TIẾNG ANH
 const TAICHINH_EN =
     "https://docs.google.com/document/d/1g2iM0VSOQev9-5A388sk-8Ombcu4BERgQY-LGR24-Qo/edit?tab=t.0";
 
+// TÀI CHÍNH DOANH NGHIỆP - TIẾNG VIỆT
 const TAICHINH_VI =
     "https://drive.google.com/drive/folders/13HS6m-r_OZwdeF7-sVdWEBtwyu7HmwZd";
 
@@ -33,23 +45,6 @@ const TAICHINH_VI =
 // ========================================
 // 2. LẤY CÁC PHẦN TỬ HTML
 // ========================================
-
-const microBtn = document.getElementById("microBtn");
-const macroBtn = document.getElementById("macroBtn");
-const quantriBtn = document.getElementById("quantriBtn");
-const ketoanBtn = document.getElementById("ketoanBtn");
-
-const marketingEnBtn =
-    document.getElementById("marketingEnBtn");
-
-const marketingViBtn =
-    document.getElementById("marketingViBtn");
-
-const taichinhEnBtn =
-    document.getElementById("taichinhEnBtn");
-
-const taichinhViBtn =
-    document.getElementById("taichinhViBtn");
 
 const shopeeBtn = document.getElementById("shopeeBtn");
 
@@ -59,30 +54,54 @@ const progress = document.getElementById("progress");
 
 
 // ========================================
-// 3. DANH SÁCH 8 TÀI LIỆU
+// 3. DANH SÁCH 9 TÀI LIỆU
 // ========================================
 
 const courseButtons = [
-    { button: microBtn, url: MICRO },
-    { button: macroBtn, url: MACRO },
-    { button: quantriBtn, url: QUANTRI },
-    { button: ketoanBtn, url: KETOAN },
-
-    { button: marketingEnBtn, url: MARKETING_EN },
-    { button: marketingViBtn, url: MARKETING_VI },
-
-    { button: taichinhEnBtn, url: TAICHINH_EN },
-    { button: taichinhViBtn, url: TAICHINH_VI }
+    { id: "quansuBtn", url: QUANSU },
+    { id: "microBtn", url: MICRO },
+    { id: "macroBtn", url: MACRO },
+    { id: "quantriBtn", url: QUANTRI },
+    { id: "ketoanBtn", url: KETOAN },
+    { id: "marketingEnBtn", url: MARKETING_EN },
+    { id: "marketingViBtn", url: MARKETING_VI },
+    { id: "taichinhEnBtn", url: TAICHINH_EN },
+    { id: "taichinhViBtn", url: TAICHINH_VI }
 ];
 
 
 // ========================================
-// 4. KHÓA TOÀN BỘ TÀI LIỆU
+// 4. KIỂM TRA CÁC PHẦN TỬ HTML
+// ========================================
+
+const courses = courseButtons.map(course => {
+
+    const button = document.getElementById(course.id);
+
+    if (!button) {
+        console.error(
+            "Không tìm thấy phần tử HTML:",
+            course.id
+        );
+
+        return null;
+    }
+
+    return {
+        button: button,
+        url: course.url
+    };
+
+}).filter(Boolean);
+
+
+// ========================================
+// 5. KHÓA TẤT CẢ TÀI LIỆU
 // ========================================
 
 function lockCourses() {
 
-    courseButtons.forEach(({ button }) => {
+    courses.forEach(({ button }) => {
 
         button.href = "#";
 
@@ -91,6 +110,8 @@ function lockCourses() {
         button.setAttribute("aria-disabled", "true");
 
         button.removeAttribute("target");
+
+        button.removeAttribute("rel");
 
     });
 
@@ -105,12 +126,12 @@ function lockCourses() {
 
 
 // ========================================
-// 5. MỞ KHÓA TOÀN BỘ TÀI LIỆU
+// 6. MỞ KHÓA TẤT CẢ TÀI LIỆU
 // ========================================
 
 function unlockCourses() {
 
-    courseButtons.forEach(({ button, url }) => {
+    courses.forEach(({ button, url }) => {
 
         button.href = url;
 
@@ -127,7 +148,7 @@ function unlockCourses() {
     status1.textContent = "✓ Đã hoàn thành bước 1";
     status1.className = "status done";
 
-    status2.textContent = "✓ Đã mở khóa 8 tài liệu";
+    status2.textContent = "✓ Đã mở khóa 9 tài liệu";
     status2.className = "status done";
 
     progress.textContent = "2/2 bước";
@@ -135,7 +156,7 @@ function unlockCourses() {
 
 
 // ========================================
-// 6. SỰ KIỆN MỞ SHOPEE
+// 7. SỰ KIỆN MỞ SHOPEE
 // ========================================
 
 shopeeBtn.addEventListener("click", function () {
@@ -146,10 +167,10 @@ shopeeBtn.addEventListener("click", function () {
 
 
 // ========================================
-// 7. NGĂN TRUY CẬP KHI CHƯA MỞ KHÓA
+// 8. NGĂN TRUY CẬP KHI CHƯA MỞ KHÓA
 // ========================================
 
-courseButtons.forEach(({ button }) => {
+courses.forEach(({ button }) => {
 
     button.addEventListener("click", function (event) {
 
@@ -165,7 +186,7 @@ courseButtons.forEach(({ button }) => {
 
     });
 
-    // Hỗ trợ thao tác bằng bàn phím
+    // Hỗ trợ bàn phím
 
     button.addEventListener("keydown", function (event) {
 
@@ -188,7 +209,7 @@ courseButtons.forEach(({ button }) => {
 
 
 // ========================================
-// 8. KHỞI TẠO TRẠNG THÁI BAN ĐẦU
+// 9. KHỞI TẠO TRẠNG THÁI
 // ========================================
 
 lockCourses();
