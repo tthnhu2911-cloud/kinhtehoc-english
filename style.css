@@ -1,946 +1,470 @@
-/* ========================================
-   RESET
-======================================== */
+/* COLOR PALETTE INSPIRED BY THE COVER IMAGE
+   Turquoise: #12b6c5 | Cream: #fffbd2
+   Lavender: #e5d5e3 | Soft pink: #f4b6bd
+*/
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --turquoise: #12b6c5;
+  --turquoise-dark: #078d9c;
+  --turquoise-soft: #e4f9fa;
+  --cream: #fffbd2;
+  --cream-deep: #f8efb4;
+  --lavender: #e5d5e3;
+  --lavender-deep: #cbb6cb;
+  --pink: #f4b6bd;
+  --ink: #26363a;
+  --muted: #718184;
+  --white: #ffffff;
+  --shadow: 0 14px 38px rgba(25, 94, 101, .10);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
-    background: #f6f8fb;
-    color: #172033;
-    line-height: 1.6;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 22%, rgba(18,182,197,.08), transparent 24rem),
+    linear-gradient(180deg, #f7ffff 0%, #fffdf2 52%, #f8f5fb 100%);
+  font-family: "Nunito", "Segoe UI", sans-serif;
 }
 
+a { color: inherit; }
 
-/* ========================================
-   GLOBAL
-======================================== */
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-::selection {
-    background: #dbeafe;
-    color: #172033;
-}
-
-
-/* ========================================
-   HERO
-======================================== */
-
+/* COVER */
 .hero {
-    position: relative;
-
-    min-height: 520px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 80px 20px;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(59, 130, 246, 0.16),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 70%,
-            rgba(99, 102, 241, 0.12),
-            transparent 32%
-        ),
-        linear-gradient(
-            135deg,
-            #0f172a 0%,
-            #172554 50%,
-            #1e3a8a 100%
-        );
+  position: relative;
+  min-height: clamp(440px, 58vw, 690px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--turquoise);
 }
 
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.035);
-
-    top: -180px;
-    right: -100px;
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
 }
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.03);
-
-    bottom: -160px;
-    left: -80px;
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(4, 75, 83, .78) 0%, rgba(4, 75, 83, .48) 43%, rgba(4, 75, 83, .02) 78%),
+              linear-gradient(0deg, rgba(4, 75, 83, .22), transparent 50%);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-
-    width: min(900px, 100%);
-
-    text-align: center;
-
-    color: white;
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 80px 0 76px;
+  color: var(--white);
 }
 
-.hero-label {
-    display: inline-block;
+.eyebrow, .section-kicker, .step-kicker {
+  display: inline-block;
+  margin: 0 0 12px;
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .19em;
+}
 
-    margin-bottom: 18px;
-
-    padding: 7px 14px;
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    color: #bfdbfe;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
+.eyebrow {
+  padding: 8px 13px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 999px;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(8px);
 }
 
 .hero h1 {
-    margin-bottom: 20px;
-
-    font-size: clamp(38px, 7vw, 68px);
-
-    line-height: 1.08;
-
-    letter-spacing: -2px;
-
-    font-weight: 800;
+  margin: 12px 0 14px;
+  max-width: 650px;
+  font-size: clamp(2.7rem, 6.4vw, 5.2rem);
+  line-height: .99;
+  font-weight: 900;
+  letter-spacing: -.045em;
+  text-shadow: 0 3px 18px rgba(0,0,0,.13);
 }
 
-.hero-description {
-    max-width: 680px;
+.hero h1 span { color: var(--cream); }
 
-    margin: 0 auto 32px;
-
-    color: #dbeafe;
-
-    font-size: 17px;
-
-    line-height: 1.8;
+.hero-content > p {
+  max-width: 510px;
+  margin: 0 0 26px;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.7;
 }
 
-
-/* ========================================
-   PRIMARY BUTTON
-======================================== */
-
-.primary-btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 52px;
-
-    padding: 0 28px;
-
-    border-radius: 14px;
-
-    background: white;
-
-    color: #172554;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.2);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+.hero-cta, .shopee-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 14px;
+  color: #344246;
+  background: var(--cream);
+  box-shadow: 0 7px 0 rgba(164, 145, 82, .25);
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
-.primary-btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 16px 35px rgba(0, 0, 0, 0.28);
+.hero-cta:hover, .shopee-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0 rgba(164, 145, 82, .2);
+  background: #fff4a9;
 }
 
-.primary-btn:active {
-    transform: translateY(0);
+.hero-sticker {
+  position: absolute;
+  right: max(5vw, calc((100vw - 1120px) / 2));
+  bottom: 34px;
+  padding: 13px 19px;
+  transform: rotate(7deg);
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 18px;
+  color: #4a5960;
+  background: var(--lavender);
+  font-size: .9rem;
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+  box-shadow: var(--shadow);
 }
 
-
-/* ========================================
-   MESSAGE SECTION
-======================================== */
-
-.message-section {
-    width: min(900px, calc(100% - 32px));
-
-    margin: 50px auto 30px;
+/* CONTENT */
+main {
+  width: min(1000px, calc(100% - 36px));
+  margin: 0 auto;
 }
 
-.message-card {
-    position: relative;
-
-    padding: 34px 38px;
-
-    border: 1px solid #e5eaf1;
-
-    border-radius: 24px;
-
-    background: white;
-
-    box-shadow:
-        0 10px 35px rgba(15, 23, 42, 0.06);
-
-    overflow: hidden;
+.welcome-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  margin: -34px auto 78px;
+  padding: 28px 32px;
+  border: 1px solid rgba(203,182,203,.65);
+  border-radius: 24px;
+  background: rgba(255,255,255,.96);
+  box-shadow: var(--shadow);
 }
 
-.message-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 5px;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            180deg,
-            #2563eb,
-            #4f46e5
-        );
+.welcome-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  color: #6b5369;
+  background: var(--lavender);
+  font-size: 1.8rem;
 }
 
-.message-card h2 {
-    margin-bottom: 20px;
+.section-kicker { color: var(--turquoise-dark); }
 
-    color: #111827;
-
-    font-size: 25px;
-
-    line-height: 1.3;
-
-    font-weight: 750;
+.welcome-card h2, .section-heading h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  font-weight: 900;
 }
 
-.message-card p {
-    margin: 13px 0;
-
-    color: #4b5563;
-
-    font-size: 15px;
-
-    line-height: 1.8;
+.welcome-card p:not(.section-kicker) {
+  margin: 8px 0 0;
+  color: #617174;
+  line-height: 1.75;
 }
 
-.message-card strong {
-    color: #1e3a8a;
-
-    font-weight: 700;
+.affiliate-note {
+  padding: 12px 15px;
+  border-left: 4px solid var(--pink);
+  border-radius: 0 12px 12px 0;
+  background: #fff6f5;
 }
 
-.message-thanks {
-    margin-top: 22px !important;
-    margin-bottom: 0 !important;
+.guide-section { padding-bottom: 76px; }
 
-    color: #172554 !important;
+.section-heading {
+  margin-bottom: 28px;
+  text-align: center;
 }
 
-
-/* ========================================
-   GUIDE SECTION
-======================================== */
-
-.guide-section {
-    width: min(900px, calc(100% - 32px));
-
-    margin: 65px auto 80px;
+.section-heading h2 {
+  margin-bottom: 7px;
+  font-size: clamp(2rem, 4vw, 2.7rem);
 }
 
-.section-header {
-    margin-bottom: 30px;
-
-    text-align: center;
+.section-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
 }
-
-.section-label {
-    margin-bottom: 8px;
-
-    color: #2563eb;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.section-header h2 {
-    margin-bottom: 10px;
-
-    color: #111827;
-
-    font-size: clamp(28px, 5vw, 38px);
-
-    line-height: 1.2;
-
-    letter-spacing: -0.7px;
-}
-
-.section-header > p:last-child {
-    color: #64748b;
-
-    font-size: 15px;
-}
-
-
-/* ========================================
-   STEP CARD
-======================================== */
 
 .step-card {
-    display: flex;
-
-    gap: 24px;
-
-    margin-bottom: 20px;
-
-    padding: 30px;
-
-    border: 1px solid #e5eaf1;
-
-    border-radius: 22px;
-
-    background: white;
-
-    box-shadow:
-        0 8px 28px rgba(15, 23, 42, 0.045);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  gap: 22px;
+  margin: 20px 0;
+  padding: 28px;
+  border: 1px solid rgba(18,182,197,.17);
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: var(--shadow);
 }
-
-.step-card:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 35px rgba(15, 23, 42, 0.07);
-}
-
-
-/* ========================================
-   STEP NUMBER
-======================================== */
 
 .step-number {
-    flex: 0 0 58px;
-
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 16px;
-
-    background: #eff6ff;
-
-    color: #2563eb;
-
-    font-size: 15px;
-    font-weight: 800;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* ========================================
-   STEP CONTENT
-======================================== */
-
-.step-content {
-    flex: 1;
-    min-width: 0;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 19px;
+  color: #17616a;
+  background: var(--turquoise-soft);
+  font-size: 1.25rem;
+  font-weight: 900;
 }
 
 .step-heading {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
 
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-bottom: 8px;
+.step-kicker {
+  margin-bottom: 5px;
+  color: var(--turquoise-dark);
 }
 
 .step-heading h3 {
-    color: #111827;
-
-    font-size: 20px;
-
-    line-height: 1.3;
+  margin: 0 0 5px;
+  font-size: 1.35rem;
+  font-weight: 900;
 }
 
-.step-content > p {
-    margin-bottom: 20px;
-
-    color: #64748b;
-
-    font-size: 14px;
-
-    line-height: 1.7;
+.step-heading p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
+.step-emoji { font-size: 2rem; }
 
-/* ========================================
-   STATUS
-======================================== */
+.shopee-button {
+  margin-top: 20px;
+  color: #573d42;
+  background: var(--pink);
+  box-shadow: 0 7px 0 #d9959e;
+}
+
+.shopee-button:hover {
+  background: #f8c4ca;
+  box-shadow: 0 10px 0 #d9959e;
+}
 
 .status {
-    display: inline-flex;
-
-    align-items: center;
-
-    padding: 6px 11px;
-
-    border-radius: 999px;
-
-    background: #f1f5f9;
-
-    color: #64748b;
-
-    font-size: 12px;
-    font-weight: 650;
-
-    white-space: nowrap;
+  margin: 13px 0 0;
+  color: var(--turquoise-dark);
+  font-size: .9rem;
+  font-weight: 800;
 }
 
-.status.done {
-    background: #ecfdf5;
+.status.muted { color: #899497; }
+.status.done { color: #16836c; }
 
-    color: #047857;
+.library-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0 16px;
+  padding: 12px 15px;
+  border-radius: 14px;
+  background: #f3fbfb;
 }
 
-.status.muted {
-    background: #f1f5f9;
+.library-status .status { margin: 0; }
 
-    color: #64748b;
+.progress-pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #5d5260;
+  background: var(--lavender);
+  font-size: .82rem;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
-
-/* ========================================
-   SHOPEE BUTTON
-======================================== */
-
-.shopee-btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 48px;
-
-    padding: 0 22px;
-
-    border-radius: 12px;
-
-    background: #111827;
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+/* COURSE LIST */
+.course-list {
+  display: grid;
+  gap: 11px;
 }
 
-.shopee-btn:hover {
-    transform: translateY(-2px);
-
-    background: #1f2937;
-
-    box-shadow:
-        0 8px 20px rgba(15, 23, 42, 0.16);
+.course-item {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid #edf0ed;
+  border-radius: 17px;
+  background: #fffefa;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
-.shopee-btn:active {
-    transform: translateY(0);
+.course-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(18,182,197,.4);
+  box-shadow: 0 8px 20px rgba(25,94,101,.07);
 }
 
+.course-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--cream);
+  font-size: 1.25rem;
+}
 
-/* ========================================
-   COURSE BUTTON
-======================================== */
+.course-info { min-width: 0; }
+
+.course-info h4 {
+  margin: 0 0 3px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.course-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.45;
+}
 
 .course-btn {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    width: 100%;
-
-    min-height: 82px;
-
-    margin-top: 13px;
-
-    padding: 17px 20px;
-
-    border: 1px solid #dbe3ef;
-
-    border-radius: 16px;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 142px;
+  padding: 10px 14px;
+  border: 1px solid #bce9eb;
+  border-radius: 12px;
+  color: #087f8b;
+  background: var(--turquoise-soft);
+  font-size: .88rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: .2s ease;
 }
-
-.course-info {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-    min-width: 0;
-}
-
-.course-label {
-    color: #64748b;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-}
-
-.course-info strong {
-    color: #172033;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    line-height: 1.4;
-}
-
-.course-arrow {
-    flex: 0 0 auto;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    background: #eff6ff;
-
-    color: #2563eb;
-
-    font-size: 20px;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-}
-
-
-/* ========================================
-   UNLOCKED COURSE
-======================================== */
 
 .course-btn:not(.locked):hover {
-    transform: translateY(-2px);
-
-    border-color: #93c5fd;
-
-    background: #f8fbff;
-
-    box-shadow:
-        0 10px 25px rgba(37, 99, 235, 0.08);
+  border-color: var(--turquoise);
+  color: white;
+  background: var(--turquoise);
+  transform: translateY(-2px);
 }
-
-.course-btn:not(.locked):hover .course-arrow {
-    transform: translateX(3px);
-
-    background: #dbeafe;
-}
-
-
-/* ========================================
-   LOCKED COURSE
-======================================== */
 
 .course-btn.locked {
-    cursor: not-allowed;
-
-    background: #f8fafc;
-
-    border-color: #e5e7eb;
-
-    opacity: 0.68;
+  border-color: #e7e1e7;
+  color: #99939a;
+  background: #f3f0f3;
+  cursor: not-allowed;
 }
-
-.course-btn.locked .course-info strong {
-    color: #64748b;
-}
-
-.course-btn.locked .course-arrow {
-    background: #e5e7eb;
-
-    color: #94a3b8;
-}
-
-
-/* ========================================
-   PROGRESS BOX
-======================================== */
-
-.progress-box {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-top: 25px;
-
-    padding: 17px 20px;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 14px;
-
-    background: #f8fafc;
-
-    color: #64748b;
-
-    font-size: 14px;
-}
-
-.progress-box strong {
-    color: #2563eb;
-
-    font-size: 14px;
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
 
 .footer {
-    padding: 35px 20px;
-
-    border-top: 1px solid #e5e7eb;
-
-    background: #ffffff;
-
-    text-align: center;
-
-    color: #94a3b8;
-
-    font-size: 12px;
-
-    line-height: 1.8;
+  padding: 32px 18px 38px;
+  color: #52676b;
+  background: #e9f9f9;
+  text-align: center;
 }
 
-.footer p:first-child {
-    color: #64748b;
-
-    font-weight: 600;
+.footer p {
+  margin: 0 0 5px;
+  font-weight: 900;
 }
 
+.footer p span { color: #e58c9b; }
+.footer small { color: #829194; }
 
-/* ========================================
-   RESPONSIVE - TABLET
-======================================== */
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .hero {
+    min-height: 560px;
+    align-items: flex-end;
+  }
 
-@media (max-width: 768px) {
+  .hero-image {
+    object-position: 53% center;
+  }
 
-    .hero {
-        min-height: 480px;
+  .hero-shade {
+    background: linear-gradient(0deg, rgba(4,75,83,.82) 0%, rgba(4,75,83,.42) 52%, rgba(4,75,83,.05) 100%);
+  }
 
-        padding: 70px 20px;
-    }
+  .hero-content {
+    width: calc(100% - 36px);
+    padding: 70px 0 55px;
+  }
 
-    .hero h1 {
-        letter-spacing: -1.5px;
-    }
+  .hero-sticker { top: 18px; right: 18px; bottom: auto; }
 
-    .hero-description {
-        font-size: 15px;
-    }
+  .welcome-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: -24px;
+    margin-bottom: 55px;
+    padding: 22px;
+  }
 
-    .message-section {
-        margin-top: 35px;
-    }
+  .step-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 21px;
+  }
 
-    .message-card {
-        padding: 28px 25px;
-    }
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+  }
 
-    .guide-section {
-        margin-top: 50px;
-    }
+  .course-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 11px;
+    padding: 13px;
+  }
 
-    .step-card {
-        padding: 25px;
+  .course-icon {
+    width: 40px;
+    height: 40px;
+  }
 
-        gap: 18px;
-    }
-
+  .course-btn {
+    grid-column: 2;
+    justify-self: start;
+    min-width: 132px;
+  }
 }
 
-
-/* ========================================
-   RESPONSIVE - MOBILE
-======================================== */
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 450px;
-
-        padding: 60px 18px;
-    }
-
-    .hero-label {
-        font-size: 10px;
-
-        letter-spacing: 1.5px;
-    }
-
-    .hero h1 {
-        font-size: 39px;
-
-        letter-spacing: -1.3px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-
-        line-height: 1.7;
-    }
-
-    .primary-btn {
-        width: 100%;
-
-        max-width: 280px;
-    }
-
-
-    /* MESSAGE */
-
-    .message-section {
-        width: calc(100% - 24px);
-
-        margin-top: 28px;
-    }
-
-    .message-card {
-        padding: 25px 21px;
-
-        border-radius: 20px;
-    }
-
-    .message-card h2 {
-        font-size: 21px;
-    }
-
-    .message-card p {
-        font-size: 14px;
-
-        line-height: 1.75;
-    }
-
-
-    /* GUIDE */
-
-    .guide-section {
-        width: calc(100% - 24px);
-
-        margin-top: 45px;
-
-        margin-bottom: 60px;
-    }
-
-    .section-header {
-        margin-bottom: 23px;
-    }
-
-    .section-header h2 {
-        font-size: 29px;
-    }
-
-    .section-header > p:last-child {
-        font-size: 14px;
-    }
-
-
-    /* STEP */
-
-    .step-card {
-        flex-direction: column;
-
-        gap: 17px;
-
-        padding: 21px;
-
-        border-radius: 19px;
-    }
-
-    .step-number {
-        width: 48px;
-        height: 48px;
-
-        flex-basis: 48px;
-
-        border-radius: 13px;
-    }
-
-    .step-heading {
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 9px;
-    }
-
-    .step-heading h3 {
-        font-size: 18px;
-    }
-
-    .step-content > p {
-        font-size: 13px;
-    }
-
-
-    /* SHOPEE */
-
-    .shopee-btn {
-        width: 100%;
-    }
-
-
-    /* COURSE */
-
-    .course-btn {
-        min-height: 76px;
-
-        padding: 15px;
-
-        gap: 12px;
-    }
-
-    .course-info strong {
-        font-size: 14px;
-    }
-
-    .course-arrow {
-        width: 34px;
-        height: 34px;
-
-        font-size: 18px;
-    }
-
-
-    /* PROGRESS */
-
-    .progress-box {
-        padding: 15px 17px;
-    }
-
-}
-
-
-/* ========================================
-   VERY SMALL MOBILE
-======================================== */
-
-@media (max-width: 380px) {
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero-description {
-        font-size: 13px;
-    }
-
-    .message-card h2 {
-        font-size: 20px;
-    }
-
-    .course-info strong {
-        font-size: 13px;
-    }
-
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
