@@ -468,3 +468,38 @@ main {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* HERO CONTACT DETAILS */
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.hero-details {
+  max-width: 600px;
+  margin: 0 0 25px;
+  padding: 15px 18px;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: 16px;
+  background: rgba(4, 75, 83, .28);
+  backdrop-filter: blur(7px);
+}
+
+.hero-details p {
+  margin: 5px 0;
+  color: #fff;
+  font-size: clamp(.96rem, 1.8vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.hero-details strong {
+  color: var(--cream);
+  font-weight: 900;
+}
+
+@media (max-width: 700px) {
+  .hero-details {
+    padding: 13px 15px;
+  }
+}
