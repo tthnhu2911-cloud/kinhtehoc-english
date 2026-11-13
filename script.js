@@ -14,7 +14,9 @@ const courses = [
   { id: "taichinhViBtn", url: "https://drive.google.com/drive/folders/13HS6m-r_OZwdeF7-sVdWEBtwyu7HmwZd" },
   { id: "phapluatBtn", url: "https://drive.google.com/drive/folders/1aaXbvJj27Xp1jKBgA_06kY3MCzqJ2HM_" },
   { id: "taKinhDoanhBtn", url: "https://docs.google.com/document/d/1exBtqzhxWZ6xP4I8fdDsXi21kddKO3tQJdvO0EVWjgk/edit?tab=t.0" },
-  { id: "taKinhDoanhNCBtn", url: "https://docs.google.com/document/d/11Z-fS5fAntm9aIHmRqxwOivW3XCHrVkLMASwIBeNW1E/edit?tab=t.ushyi9bvpgb" }
+  { id: "taKinhDoanhNCBtn", url: "https://docs.google.com/document/d/11Z-fS5fAntm9aIHmRqxwOivW3XCHrVkLMASwIBeNW1E/edit?tab=t.ushyi9bvpgb" },
+  { id: "trietHocBtn", url: "https://drive.google.com/drive/folders/1575oGumw9L4zSAW4AF_WGs57JOWqEwef" },
+  { id: "thueBtn", url: "https://drive.google.com/drive/folders/17k90uSqLa32D2v7QQYYTvi9mMLM59Jlk" }
 ];
 
 const shopeeBtn = document.getElementById("shopeeBtn");
@@ -65,7 +67,7 @@ function unlockCourses() {
     status1.className = "status done";
   }
   if (status2) {
-    status2.textContent = "✓ Đã mở khóa 12 tài liệu";
+    status2.textContent = "✓ Đã mở khóa 14 tài liệu";
     status2.className = "status done";
   }
   if (progress) progress.textContent = "2/2 bước";
